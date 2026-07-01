@@ -67,6 +67,56 @@
       font-size: 0.95rem;
     }
 
+    textarea {
+      width: 100%;
+      border-radius: 16px;
+      border: 1px solid rgba(148, 163, 184, 0.32);
+      background: rgba(15, 23, 42, 0.85);
+      color: #e2e8f0;
+      padding: 1rem;
+      font: inherit;
+      resize: vertical;
+      min-height: 170px;
+      margin-top: 0.75rem;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #cbd5e1;
+    }
+
+    .meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+
+    button {
+      border: none;
+      background: #38bdf8;
+      color: #0f172a;
+      border-radius: 999px;
+      padding: 0.85rem 1.25rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      background: #22d3ee;
+    }
+
+    .meta span {
+      color: #94a3b8;
+      font-size: 0.95rem;
+    }
+
     .badge {
       display: inline-flex;
       align-items: center;
@@ -83,18 +133,18 @@
 </head>
 <body>
   <main class="container">
-    <p class="tagline">Welcome to my GitHub Pages site</p>
-    <h1>Hi, I'm <strong>bfrodsham</strong>.</h1>
-    <p>
-      This page is a simple portfolio and demonstration site for my projects.
-      I am currently learning React and planning to publish React demos here soon.
-    </p>
-    <p>
-      For now, feel free to explore this site or check out the repository on GitHub.
-    </p>
-    <div class="badge">Next update: React learning progress</div>
+    <h1>Hi, I'm Benjamin Frodsham</h1>
+    <p class="tagline">Type a question about me below and press submit. Your input is limited to 300 characters.</p>
+    <form onsubmit="return false;">
+      <label for="resume-prompt">Your question</label>
+      <textarea id="resume-prompt" name="resume-prompt" rows="6" maxlength="300" placeholder="Ask about my experience, skills, or background..." required></textarea>
+      <div class="meta">
+        <span>Max 300 characters</span>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
     <footer>
-      Built with HTML and CSS. Deployed from <strong>bfrodsham.github.io</strong>.
+      This field is for prompt input only; submission does not perform any action.
     </footer>
   </main>
 </body>
