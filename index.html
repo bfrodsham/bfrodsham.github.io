@@ -135,7 +135,7 @@
   <main class="container">
     <h1>Hi, I'm Benjamin Frodsham</h1>
     <p class="tagline">Type a question about me below and press submit. Your input is limited to 300 characters.</p>
-    <form onsubmit="return false;">
+    <form id="resume-form">
       <label for="resume-prompt">Your question</label>
       <textarea id="resume-prompt" name="resume-prompt" rows="6" maxlength="300" placeholder="Ask about my experience, skills, or background..." required></textarea>
       <div class="meta">
@@ -144,8 +144,37 @@
       </div>
     </form>
     <footer>
-      This field is for prompt input only; submission does not perform any action.
+      This field is wired to prepare a prompt payload for AWS Lambda, but no request is sent.
     </footer>
+  </main>
+  <script>
+    const lambdaEndpoint = "https://your-api-id.execute-api.region.amazonaws.com/prod/resume-question";
+    const form = document.getElementById("resume-form");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      const prompt = document.getElementById("resume-prompt").value.trim();
+      if (!prompt) {
+        return;
+      }
+
+      const payload = {
+        prompt,
+        source: "resume-page",
+      };
+
+      console.log("Prompt payload ready for AWS Lambda:", payload);
+      console.log("Lambda endpoint:", lambdaEndpoint);
+
+      // The actual request is intentionally disabled.
+      // Example implementation:
+      // fetch(lambdaEndpoint, {
+      //   method: "POST",
+      //   headers: { "Content-Type": "application/json" },
+      //   body: JSON.stringify(payload),
+      // });
+    });
+  </script>
   </main>
 </body>
 </html>
