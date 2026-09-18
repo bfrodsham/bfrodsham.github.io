@@ -24,8 +24,12 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
+    const githubLink = compiled.querySelector('a');
     expect(compiled.querySelector('h1')?.textContent).toContain('bfrodsham.github.io');
     expect(compiled.querySelector('p')?.textContent).toContain('A very basic Angular UI to get started.');
-    expect(compiled.querySelector('a')?.getAttribute('href')).toBe('https://github.com/bfrodsham');
+    expect(githubLink?.getAttribute('href')).toBe('https://github.com/bfrodsham');
+    expect(githubLink?.getAttribute('target')).toBe('_blank');
+    expect(githubLink?.getAttribute('rel')).toContain('noopener');
+    expect(githubLink?.getAttribute('rel')).toContain('noreferrer');
   });
 });
