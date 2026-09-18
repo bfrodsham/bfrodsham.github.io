@@ -26,5 +26,6 @@ describe('AppComponent', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h1')?.textContent).toContain('bfrodsham.github.io');
     expect(compiled.querySelector('p')?.textContent).toContain('A very basic Angular UI to get started.');
+    expect(compiled.querySelector('a')?.getAttribute('href')).toBe('https://github.com/bfrodsham');
   });
 });
