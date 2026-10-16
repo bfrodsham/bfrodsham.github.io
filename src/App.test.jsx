@@ -1,6 +1,11 @@
+import { readFileSync } from 'node:fs'
+import { resolve } from 'node:path'
+import { cwd } from 'node:process'
 import { render, screen } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
 import App from './App.jsx'
+
+const indexHtml = readFileSync(resolve(cwd(), 'index.html'), 'utf8')
 
 describe('landing page', () => {
   it('renders the header, introduction, and recent activity in order', () => {
@@ -32,5 +37,16 @@ describe('landing page', () => {
       '#main-content',
     )
     expect(screen.getByRole('main')).toHaveAttribute('id', 'main-content')
+  })
+
+  it('sets the required document metadata and no-script notice', () => {
+    expect(indexHtml).toContain('<html lang="en">')
+    expect(indexHtml).toContain('<title>Bfrodsham Portfolio</title>')
+    expect(indexHtml).toContain(
+      'What is Benjamin Frodsham up to these days?',
+    )
+    expect(indexHtml).toContain('href="/favicon.svg"')
+    expect(indexHtml).toContain('<noscript>')
+    expect(indexHtml).toContain("window.matchMedia('(prefers-color-scheme: dark)')")
   })
 })

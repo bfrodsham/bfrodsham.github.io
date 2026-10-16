@@ -1,16 +1,16 @@
-# React + Vite
+# Bfrodsham Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A static React and Vite site for Benjamin Frodsham's GitHub profile, deployed
+to GitHub Pages.
 
-Currently, two official plugins are available:
+## Development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- `npm install` installs dependencies.
+- `npm run dev` starts the local development server.
+- `npm run lint` checks source files.
+- `npm test` runs the test suite.
+- `npm run build` creates the production site in `dist/`.
+- `npm run preview` serves the production build locally.
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Feature specifications and project principles are documented in
+[`specs/README.md`](specs/README.md).
