@@ -19,7 +19,7 @@ A top header with a brand and navigation links to external sites (blog, projects
 - **FR-005** Links with real external URLs MUST use `target="_blank"` and `rel="noopener noreferrer"`.
 - **FR-006** Links MUST have visible focus styles.
 - **FR-007** On narrow screens the nav MUST wrap or collapse without horizontal scrolling.
-- **FR-008** The brand text SHOULD be placeholder (e.g. owner name). [NEEDS CLARIFICATION: brand text/logo]
+- **FR-008** The brand text MUST be "Benjamin Frodsham" (text only, no logo) and MAY link to `#`/top of page.
 
 ## Edge Cases
 - Very long labels wrap rather than overflow.

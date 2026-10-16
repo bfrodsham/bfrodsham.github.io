@@ -14,4 +14,4 @@ Each feature folder contains:
 | [003-introduction](003-introduction/spec.md) | Intro section with placeholder content |
 | [004-recent-commits](004-recent-commits/spec.md) | "What am I up to?" table of latest public commits |
 
-`[NEEDS CLARIFICATION]` marks open questions to resolve before implementing the affected item.
+`[NEEDS CLARIFICATION]` marks open questions to resolve before implementing the affected item. None are currently open.
