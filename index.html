@@ -4,9 +4,32 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>bfrodsham-portfolio</title>
+    <meta
+      name="description"
+      content="What is Benjamin Frodsham up to these days?"
+    />
+    <title>Bfrodsham Portfolio</title>
+    <script>
+      const themePreference = window.matchMedia('(prefers-color-scheme: dark)')
+      const setTheme = () => {
+        document.documentElement.setAttribute(
+          'data-bs-theme',
+          themePreference.matches ? 'dark' : 'light',
+        )
+      }
+
+      setTheme()
+      themePreference.addEventListener('change', setTheme)
+    </script>
   </head>
   <body>
+    <noscript>
+      <div class="container mt-3">
+        <p class="alert alert-warning">
+          This portfolio requires JavaScript to display its content.
+        </p>
+      </div>
+    </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
