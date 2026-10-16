@@ -25,7 +25,7 @@ A section presenting a table of the owner's latest public GitHub commits so visi
 - **FR-008** Only public repository data MUST be exposed.
 - **FR-009** The section MUST provide loading, empty, and error states.
 - **FR-010** Commit data MUST conform to the schema below.
-- **FR-011** Inclusion rules: commits MUST be authored by the GitHub login `bfrodsham`; merge commits MUST be included; commits in forked repositories MUST be excluded (fork commits are largely upstream work and GitHub's commit search does not reliably index them).
+- **FR-011** Inclusion rules: commits MUST be authored by the GitHub login `bfrodsham`; merge commits MUST be included; commits in forked repositories MUST NOT be included (confirmed by owner; fork commits are largely upstream work and GitHub's commit search does not reliably index them).
 - **FR-012** Data source: the GitHub commit search REST API, called from a scheduled GitHub Actions workflow at most once per day (plus manual dispatch), which writes a static JSON file served with the site. Visitors' browsers MUST NOT call the GitHub API, so API rate limits do not affect visitors.
 
 ## Data Schema

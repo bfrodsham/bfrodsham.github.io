@@ -9,14 +9,14 @@ GitHub Pages site for the owner's GitHub profile: a landing page for recruiters 
 - **P1 Static first.** The site MUST be a static build with no runtime backend. Dynamic data MUST be produced at build/schedule time or fetched from public APIs.
 - **P2 Spec-driven.** Behavior changes MUST start with a spec change. Requirements are numbered (FR-xxx) and tests/tasks SHOULD reference them.
 - **P3 Accessible.** Semantic HTML, keyboard operable, WCAG 2.1 AA contrast. Adopt low-complexity accessibility measures by default: skip link, visible focus, `prefers-reduced-motion` respected, sufficient contrast in both light and dark themes, descriptive link text, `lang` attribute, landmarks, and labeled regions. Lighthouse accessibility score MUST be >= 95.
-- **P4 Simple.** Prefer the least dependencies; new runtime dependencies MUST be justified in a plan.
+- **P4 Simple.** Prefer the least dependencies (Bootstrap is the approved styling dependency); new runtime dependencies MUST be justified in a plan.
 - **P5 Public data only.** No private repository data or secrets MUST ever be shipped to the client.
 
 ## Stack
 - React 19 + Vite 8, JavaScript (no TypeScript currently), ESLint.
 - Scripts: `npm run dev`, `npm run build`, `npm run lint`, `npm run preview`.
 - Testing: Vitest + React Testing Library (+ jsdom, `@testing-library/jest-dom`, `@testing-library/user-event`). Script: `npm test` (runs `vitest run`).
-- Styling: Minimalistic plain CSS (one global stylesheet plus optional per-component CSS files); no CSS framework. Light and dark themes via CSS custom properties and `prefers-color-scheme` (follows the OS setting; no toggle).
+- Styling: Bootstrap 5.3 (`bootstrap` npm package, CSS only; no `react-bootstrap` and no Bootstrap JS unless a plan justifies it), used for layout and components (container, navbar, table, utilities) to keep a minimalist look. Custom CSS SHOULD be limited to a small `src/index.css` for anything Bootstrap can't cover. Light and dark themes use Bootstrap's `data-bs-theme` attribute on `<html>`, set from `prefers-color-scheme` (follows the OS setting; no toggle).
 
 ## Repository conventions
 - Source in `src/`, static assets and data in `public/`, specs in `specs/`.

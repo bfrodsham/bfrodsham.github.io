@@ -7,7 +7,7 @@ Scheduled GitHub Actions workflow generates `public/data/recent-commits.json`; t
 - `.github/workflows/update-commits.yml`: daily cron + `workflow_dispatch`; runs `scripts/fetch-commits.mjs`; commits the JSON only if changed.
 - `scripts/fetch-commits.mjs`: calls GitHub commit search (`author:<login> is:public`, sorted by author-date desc, per_page N) using `GITHUB_TOKEN`; maps results to the schema; applies FR-011 filters.
 - `src/hooks/useRecentCommits.js`: fetches `${import.meta.env.BASE_URL}data/recent-commits.json`; returns `{status, commits}` (loading | ready | empty | error).
-- `src/components/RecentCommits.jsx`: heading, table, state messages.
+- `src/components/RecentCommits.jsx`: heading, table (`table table-striped table-hover` inside `table-responsive`), state messages (Bootstrap `alert`/`spinner-border` with `role="status"`).
 - Commit seed file checked in so the app works before the first workflow run.
 
 ## Notes
